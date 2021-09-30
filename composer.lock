@@ -12,15 +12,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/benlumia007/backdrop.git",
-                "reference": "5d1b16e58b42f48b139db502373d160eb38e8551"
+                "reference": "1eeb5cc1831dc9d0fb9f06086bbce6098bc269c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/benlumia007/backdrop/zipball/5d1b16e58b42f48b139db502373d160eb38e8551",
-                "reference": "5d1b16e58b42f48b139db502373d160eb38e8551",
+                "url": "https://api.github.com/repos/benlumia007/backdrop/zipball/1eeb5cc1831dc9d0fb9f06086bbce6098bc269c4",
+                "reference": "1eeb5cc1831dc9d0fb9f06086bbce6098bc269c4",
                 "shasum": ""
             },
             "require": {
+                "benlumia007/backdrop": "v3.0.0.x-dev",
                 "php": ">=5.6"
             },
             "type": "library",
@@ -50,7 +51,7 @@
                 "issues": "https://github.com/benlumia007/backdrop/issues",
                 "source": "https://github.com/benlumia007/backdrop/tree/v3.0.0"
             },
-            "time": "2021-09-29T21:29:14+00:00"
+            "time": "2021-09-30T15:48:36+00:00"
         }
     ],
     "packages-dev": [],
