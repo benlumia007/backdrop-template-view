@@ -23,7 +23,7 @@
  */
 namespace Benlumia007\Backdrop\Template\View\View;
 
-use Benlumia007\Backdrop\Contracts\Template\View as ViewContract;
+use Benlumia007\Backdrop\Contracts\View\View as ViewContract;
 use Benlumia007\Backdrop\Tools\Collection;
 use function Benlumia007\Backdrop\Template\locate as locate_template;
 
