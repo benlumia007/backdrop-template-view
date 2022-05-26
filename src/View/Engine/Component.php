@@ -22,14 +22,14 @@ use Benlumia007\Backdrop\Template\View\View\Component as View;
 /**
  * Egine class
  * 
- * @since  3.0.0
+ * @since  1.0.0
  * @access public
  */
 class Component {
 	/**
 	 * Returns a View object.
 	 *
-	 * @since  3.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @param  string            $name
 	 * @param  array|string      $slugs
@@ -43,7 +43,7 @@ class Component {
 	/**
 	 * Outputs a view template.
 	 *
-	 * @since  3.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @param  string            $name
 	 * @param  array|string      $slugs
@@ -57,7 +57,7 @@ class Component {
 	/**
 	 * Returns a view template as a string.
 	 *
-	 * @since  3.0.0
+	 * @since  1.0.0
 	 * @access public
 	 * @param  string            $name
 	 * @param  array|string      $slugs

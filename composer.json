@@ -23,7 +23,6 @@
         ]
     },
     "require": {
-        "php": ">=7.0",
-        "benlumia007/backdrop": "v3.0.0.x-dev"
+        "php": ">=7.4.3"
     }
 }
