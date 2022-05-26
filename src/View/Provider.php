@@ -15,7 +15,7 @@
 
 namespace Benlumia007\Backdrop\Template\View;
 
-use Benlumia007\Backdrop\Tools\ServiceProvider;
+use Benlumia007\Backdrop\Support\ServiceProvider;
 use Benlumia007\Backdrop\Template\View\Engine\Component as Engine;
 use Benlumia007\Backdrop\Template\Contracts\View\Engine as EngineContract;
 use Benlumia007\Backdrop\Template\Contracts\View\View   as ViewContract;
