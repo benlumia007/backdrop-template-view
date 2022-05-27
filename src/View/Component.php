@@ -25,7 +25,7 @@ namespace Benlumia007\Backdrop\Template\View\View;
 
 use Benlumia007\Backdrop\Template\View\Contracts\View as ViewContract;
 use Benlumia007\Backdrop\Tools\Collection;
-use function Benlumia007\Backdrop\Template\locate as locate_template;
+use function Benlumia007\Backdrop\Template\Helpers\locate as locate_template;
 
 /**
  * View class.
