@@ -4,8 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "991d1fd6ff2c3034d9625930a2345bd3",
+    "content-hash": "7e5e7f9d372aaae840f35c1a69cdb491",
     "packages": [
+        {
+            "name": "benlumia007/backdrop-contracts",
+            "version": "v1.0.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/benlumia007/backdrop-contracts.git",
+                "reference": "ae5349a4ca78587d95200bffeabcf8ce25e7036c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/benlumia007/backdrop-contracts/zipball/ae5349a4ca78587d95200bffeabcf8ce25e7036c",
+                "reference": "ae5349a4ca78587d95200bffeabcf8ce25e7036c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.3"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Benlumia007\\Backdrop\\Contracts\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Lu",
+                    "email": "benlumia007@gmail.com",
+                    "homepage": "https://benjlu.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Backdrop Contracts for Backdrop framework.",
+            "homepage": "https://github.com/benlumia007/backdrop-contracts",
+            "keywords": [
+                "classicpress",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/benlumia007/backdrop-contracts/issues",
+                "source": "https://github.com/benlumia007/backdrop-contracts/tree/v1.0.0"
+            },
+            "time": "2022-05-27T07:05:04+00:00"
+        },
         {
             "name": "benlumia007/backdrop-template-helpers",
             "version": "v1.0.0.x-dev",
@@ -61,6 +109,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "benlumia007/backdrop-contracts": 20,
         "benlumia007/backdrop-template-helpers": 20
     },
     "prefer-stable": false,
