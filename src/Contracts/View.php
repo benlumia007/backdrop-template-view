@@ -11,7 +11,7 @@
 /**
  * Define namespace
  */
-namespace Benlumia007\Backdrop\Template\Contracts;
+namespace Benlumia007\Backdrop\Template\View\Contracts;
 use Benlumia007\Backdrop\Contracts\Displayable;
 use Benlumia007\Backdrop\Contracts\Renderable;
 
