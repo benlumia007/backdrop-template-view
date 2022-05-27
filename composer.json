@@ -22,6 +22,7 @@
     "require": {
         "php": ">=7.4.29",
         "benlumia007/backdrop-contracts": "v1.0.0.x-dev",
+        "benlumia007/backdrop-proxies": "v1.0.0.x-dev",
         "benlumia007/backdrop-template-helpers": "v1.0.0.x-dev"
     }
 }
