@@ -18,6 +18,7 @@
 namespace Benlumia007\Backdrop\Template\View\Engine;
 use Benlumia007\Backdrop\Proxies\App;
 use Benlumia007\Backdrop\Template\View\View\Component as View;
+use Benlumia007\Backdrop\Tools\Collection;
 
 /**
  * Egine class
@@ -31,13 +32,20 @@ class Component {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string            $name
-	 * @param  array|string      $slugs
+     * @param  string           $name
+     * @param  array|string     $slugs
+     * @param  array|Collection $data
 	 * @return View
 	 */
-	public function view( $name, $slugs = [] ) {
+	public function view( $name, $slugs = [], $data = [] ) {
+		
+		if ( ! $data instanceof Collection ) {
+			$data = new Collection( ( array ) $data );
+		}
 
-		return App::resolve( View::class, compact( 'name', 'slugs' ) );
+		$data->add( 'engine', $this );
+
+		return App::resolve( View::class, compact( 'name', 'slugs', 'data' ) );
 	}
 
 	/**
@@ -45,13 +53,14 @@ class Component {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string            $name
-	 * @param  array|string      $slugs
+     * @param  string           $name
+     * @param  array|string     $slugs
+     * @param  array|Collection $data
 	 * @return void
 	 */
-	public function display( $name, $slugs = [] ) {
+	public function display( $name, $slugs = [], $data = [] ) {
 
-		$this->view( $name, $slugs )->display();
+		$this->view( $name, $slugs, $data )->display();
 	}
 
 	/**
@@ -59,12 +68,13 @@ class Component {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string            $name
-	 * @param  array|string      $slugs
+     * @param  string           $name
+     * @param  array|string     $slugs
+     * @param  array|Collection $data
 	 * @return string
 	 */
-	public function render( $name, $slugs = [] ) {
+	public function render( $name, $slugs = [], $data = [] ) {
 
-		return $this->view( $name, $slugs )->render();
+		return $this->view( $name, $slugs, $data )->render();
 	}
 }
