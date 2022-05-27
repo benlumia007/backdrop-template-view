@@ -57,6 +57,15 @@ class Component implements ViewContract {
 	protected $slugs = [];
 
 	/**
+	 * An array of data that is passed into the view template.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    array
+	 */
+	protected $data = [];
+
+	/**
 	 * The template filename.
 	 *
 	 * @since  1.0.0
@@ -75,14 +84,16 @@ class Component implements ViewContract {
 	 * @param  object  $data
 	 * @return object
 	 */
-	public function __construct( $name, $slugs = [] ) {
+	public function __construct( $name, $slugs = [], Collection $data = null ) {
 
 		$this->name  = $name;
-		$this->slugs = (array) $slugs;
+		$this->slugs = ( array ) $slugs;
+		$this->data  = $data;
 
 		// Apply filters after all the properties have been assigned.
 		// This way, the full object is available to filters.
-		$this->slugs = apply_filters( "backdrop/view/{$this->name}/slugs", $this->slugs, $this );
+		$this->slugs = apply_filters( "backdrop/template/view/{$this->name}/slugs", $this->slugs, $this );
+		$this->data  = apply_filters( "backdrop/template/view/{$this->name}/data",  $this->data,  $this );
 	}
 
 	/**
@@ -93,7 +104,6 @@ class Component implements ViewContract {
 	 * @return string
 	 */
 	public function __toString() {
-
 		return $this->render();
 	}
 
@@ -105,8 +115,7 @@ class Component implements ViewContract {
 	 * @return array
 	 */
 	public function slugs() {
-
-		return (array) $this->slugs;
+		return ( array ) $this->slugs;
 	}
 
 	/**
@@ -134,7 +143,7 @@ class Component implements ViewContract {
 		$templates[] = "{$this->name}.php";
 
 		// Allow developers to overwrite the hierarchy.
-		return apply_filters( "backdrop/view/{$this->name}/hierarchy", $templates, $this->slugs );
+		return apply_filters( "backdrop/template/view/{$this->name}/hierarchy", $templates, $this->slugs );
 	}
 
 	/**
@@ -145,7 +154,6 @@ class Component implements ViewContract {
 	 * @return string
 	 */
 	protected function locate() {
-
 		return locate_template( $this->hierarchy() );
 	}
 
@@ -182,7 +190,12 @@ class Component implements ViewContract {
 			// Maybe remove core WP's `prepend_attachment`.
 			$this->maybeShiftAttachment();
 
+			if ( $this->data instanceof Collection ) {
+				extract( $this->data->all() );
+			}
+
 			// Make `$data` and `$view` variables available to templates.
+			$data = $this->data;
 			$view = $this;
 
 			// Load the template.
@@ -198,7 +211,6 @@ class Component implements ViewContract {
 	 * @return string
 	 */
 	public function render() {
-
 		ob_start();
 		$this->display();
 		return ob_get_clean();
