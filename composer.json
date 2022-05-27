@@ -16,13 +16,10 @@
     ],
     "autoload": {
         "psr-4": {
-          "Benlumia007\\Backdrop\\Template\\": "src/"
-		},
-        "files": [
-            "src/functions-helpers.php"
-        ]
+          "Benlumia007\\Backdrop\\Template\\View\\": "src/"
+		}
     },
     "require": {
-        "php": ">=7.4.3"
+        "php": ">=7.4.29"
     }
 }
