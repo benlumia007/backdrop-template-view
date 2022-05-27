@@ -3,9 +3,11 @@
  * Engine interface
  *
  * @package   Backdrop
- * @copyright Copyright (C) 2019-2021. Benjamin Lu
+ * @author    Benjamin Lu <benlumia007@gmail.com>
+ * @copyright 2019-2022. Benjamin Lu
+ * @link      https://github.com/benlumia007/backdrop-template-view
  * @license   https://www.gnu.org/licenses/gpl-2.0.html
- * @author    Benjamin Lu ( https://benjlu.com )
+
  */
 
 /**
@@ -25,31 +27,34 @@ interface Engine {
      * 
      * @since  1.0.0
      * @access public
-     * @param  string $name
-     * @param  mixed  $slugs
+     * @param  string           $name
+     * @param  array|string     $slugs
+     * @param  array|Collection $data
      * @return View
      */
-    public function view( $name, $slugs = [] );
+    public function view( $name, $slugs = [], $data = [] );
 
     /**
      * Outputs a view template.
      * 
      * @since  1.0.0
      * @access public
-     * @param  string $name
-     * @param  mixed  $slugs
+     * @param  string           $name
+     * @param  array|string     $slugs
+     * @param  array|Collection $data
      * @return void
      */
-    public function display( $name, $slugs = [] );
+    public function display( $name, $slugs = [], $data = [] );
 
     /**
      * Returns a view template as a string.
      * 
      * @since  1.0.0
      * @access public
-     * @param  string $name
-     * @param  mixed  $slugs
+     * @param  string           $name
+     * @param  array|string     $slugs
+     * @param  array|Collection $data
      * @return void
      */
-    public function render( $name, $slugs = [] );
+    public function render( $name, $slugs = [], $data = [] );
 }
