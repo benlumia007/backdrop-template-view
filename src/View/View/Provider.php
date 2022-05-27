@@ -13,7 +13,7 @@
  * @license   https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-namespace Benlumia007\Backdrop\Template\View;
+namespace Benlumia007\Backdrop\Template\View\View;
 
 use Benlumia007\Backdrop\Support\ServiceProvider;
 use Benlumia007\Backdrop\Template\View\Engine\Component as Engine;
